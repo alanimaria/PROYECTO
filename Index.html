@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Seguro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+
+    <input type="text" id="user" placeholder="User">
+    <input type="password" id="passwordInput" placeholder="Password">
+
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+
+    <ul>
+        <li id="length">Minimo 8 caracteres</li>
+        <li id="uppercase">Una mayuscula</li>
+        <li id="lowercase">Una minuscula</li>
+        <li id="number">Un numero</li>
+        <li id="special">Un caracter especial</li>
+    </ul>
+
+    <button id="loginBtn">Ingresar</button>
+
+    <p id="message"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
