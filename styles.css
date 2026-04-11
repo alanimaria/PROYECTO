@@ -1,0 +1,118 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* fondo con animacion tt */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #fbc2eb,   /* primer color */
+        #a6c1ee,   /* 2do color */
+        #fddb92    /* 3ro cpolr */
+    );
+
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* animacion */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* controlador princepal */
+.container {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 25px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* titulooo */
+h1 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* efecto */
+input:focus {
+    border-bottom: 2px solid #a5b4fc;
+}
+
+/* lista  sin puntos */
+ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* items de la lista de requisitos */
+li {
+    font-size: 13px;
+    color: #555;
+    margin: 3px 0;
+}
+
+/* boton */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #a5b4fc, #fbcfe8);
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* efecto paara cuando se le haga hover al boton */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* mensaje */
+#message {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* estados */
+.success {
+    color: #86efac;
+}
+
+.error {
+    color: #fca5a5;
+}
