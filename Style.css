@@ -1,0 +1,53 @@
+﻿body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    width: 300px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/*Contenedor de barra :)*/ 
+.strength-bar-container {
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+/*Barra dinámica-_- */
+#strength-bar {
+    height: 100%;
+    width: 0%; /* Empezamos*/
+    transition: all 0.3s ease;
+}
+
+/* Estilos de validación */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    color: #888;
+    margin-bottom: 5px;
+}
+
+    li.valid {
+        color: green;
+        font-weight: bold;
+    }
+
+        li.valid::before {
+            content: "✔ ";
+        }
