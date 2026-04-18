@@ -115,8 +115,11 @@ function copiarSalida() {
     if (!passGenerada) return;
     navigator.clipboard.writeText(passGenerada).catch(() => {});
     mostrarToast();
+    const btns = document.querySelectorAll('.salida-fila .icono-btn');
+    const btnCopiar = btns[0]; // 0=copiar, 1=ojo
+    btnCopiar.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+    setTimeout(() => { btnCopiar.innerHTML = '<i class="bi bi-clipboard"></i>'; }, 1500);
 }
-
 /** Muestra el toast de "¡Copiado!" por 1.5 segundos */
 function mostrarToast() {
     const toast = document.getElementById('toast');
@@ -227,9 +230,11 @@ function renderizarLista() {
 /** Copia la contraseña de una entrada guardada */
 function copiarEntrada(indice) {
     navigator.clipboard.writeText(entradasGuardadas[indice].pass).catch(() => {});
-    mostrarToast();
+    const btns = document.querySelectorAll(`#item-${indice} .icono-btn`);
+    const btnCopiar = btns[1]; // 0=ojo, 1=copiar, 2=editar, 3=eliminar
+    btnCopiar.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+    setTimeout(() => { btnCopiar.innerHTML = '<i class="bi bi-clipboard"></i>'; }, 1500);
 }
-
 function eliminarEntrada(indice) {
     entradasGuardadas.splice(indice, 1);
     renderizarLista();
@@ -244,7 +249,7 @@ function alternarEdicion(indice) {
     if (editando) {
         vista.style.display   = 'none';
         edicion.style.display = 'flex';
-        btn.textContent       = '💾';
+        btn.innerHTML = '<i class="bi bi-floppy"></i>';
         btn.title             = 'Guardar cambios';
     } else {
         // Guardar los cambios editados
