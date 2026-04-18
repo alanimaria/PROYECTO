@@ -1,118 +1,614 @@
-/* reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Modelo de caja */
+  box-sizing: border-box;
 
-/* fondo con animacion tt */
+  /* Márgenes */
+  margin: 0;
+
+  /* Relleno */
+  padding: 0;}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Modelo de caja */
+  display: flex;
 
-    background: linear-gradient(
+  /* Flexbox y Grid */
+  justify-content: center;
+  align-items: center;
+
+  /* Dimensiones */
+  min-height: 100vh;
+
+  /* Fondos */
+  background: linear-gradient(
         135deg,
-        #fbc2eb,   /* primer color */
-        #a6c1ee,   /* 2do color */
-        #fddb92    /* 3ro cpolr */
+        #fbc2eb,   
+        #a6c1ee,   
+        #fddb92    
     );
+  background-size: 200% 200%;
 
-    background-size: 200% 200%;
-    animation: gradientMove 8s ease infinite;
+  /* Tipografía */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+  /* Transiciones y animaciones */
+  animation: gradientMove 8s ease infinite;}
 
-/* animacion */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* controlador princepal */
 .container {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    padding: 35px;
-    border-radius: 25px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+/* Modelo de caja */
+  overflow: hidden;
 
-/* titulooo */
-h1 {
-    margin-bottom: 20px;
-    color: #444;
-}
+  /* Dimensiones */
+  width: 480px;
 
-/* inputs */
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 10px;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    background: transparent;
-    outline: none;
-    text-align: center;
-    transition: 0.3s;
-}
+  /* Relleno */
+  padding: 0;
 
-/* efecto */
-input:focus {
-    border-bottom: 2px solid #a5b4fc;
-}
+  /* Bordes */
+  border-radius: 25px;
 
-/* lista  sin puntos */
+  /* Fondos */
+  background: rgba(255, 255, 255, 0.4);
+
+  /* Tipografía */
+  text-align: center;
+
+  /* Colores y efectos */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  /* Otras propiedades */
+  backdrop-filter: blur(12px);}
+
+.tabs {
+/* Modelo de caja */
+  display: flex;
+
+  /* Bordes */
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+
+  /* Fondos */
+  background: rgba(255,255,255,0.35);}
+
+.tab-btn {
+/* Flexbox y Grid */
+  flex: 1;
+
+  /* Relleno */
+  padding: 14px 10px;
+
+  /* Bordes */
+  border: none;
+
+  /* Fondos */
+  background: transparent;
+
+  /* Tipografía */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  /* Colores y efectos */
+  color: #666;
+
+  /* Transiciones y animaciones */
+  transition: background 0.2s, color 0.2s;
+
+  /* Interactividad */
+  cursor: pointer;}
+
+.tab-btn.active {
+/* Bordes */
+  border-bottom: 2px solid #a5b4fc;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.55);
+
+  /* Colores y efectos */
+  color: #333;}
+
+.tab-btn:hover:not(.active) {
+/* Fondos */
+  background: rgba(255,255,255,0.25);}
+
+.panel {
+/* Modelo de caja */
+  display: none;
+
+  /* Relleno */
+  padding: 25px 30px 30px;
+
+  /* Tipografía */
+  text-align: left;}
+
+.panel.active {
+/* Modelo de caja */
+  display: block;}
+
+.campo-grupo {
+/* Márgenes */
+  margin-bottom: 12px;}
+
+.campo-grupo label {
+/* Modelo de caja */
+  display: block;
+
+  /* Márgenes */
+  margin-bottom: 3px;
+
+  /* Tipografía */
+  font-size: 12px;
+
+  /* Colores y efectos */
+  color: #555;}
+
+.campo-input, input[type="text"], input[type="password"] {
+/* Dimensiones */
+  width: 100%;
+
+  /* Relleno */
+  padding: 10px 14px;
+
+  /* Bordes */
+  border-radius: 20px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.55);
+
+  /* Tipografía */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+
+  /* Colores y efectos */
+  color: #333;
+
+  /* Transiciones y animaciones */
+  transition: 0.3s;
+
+  /* Otras propiedades */
+  outline: none;}
+
+.campo-input:focus, input[type="text"]:focus, input[type="password"]:focus {
+/* Bordes */
+  border-bottom: 2px solid #a5b4fc;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.75);}
+
+.progress-container {
+/* Modelo de caja */
+  overflow: hidden;
+
+  /* Dimensiones */
+  width: 100%;
+  height: 6px;
+
+  /* Márgenes */
+  margin: 8px 0 10px;
+
+  /* Bordes */
+  border-radius: 3px;
+
+  /* Fondos */
+  background: rgba(0,0,0,0.1);}
+
+#progressBar {
+/* Dimensiones */
+  height: 100%;
+  width: 0%;
+
+  /* Bordes */
+  border-radius: 3px;
+
+  /* Transiciones y animaciones */
+  transition: width 0.3s, background-color 0.3s;}
+
 ul {
-    list-style: none;
-    text-align: left;
-    margin-top: 10px;
-}
+/* Modelo de caja */
+  display: flex;
 
-/* items de la lista de requisitos */
+  /* Flexbox y Grid */
+  flex-wrap: wrap;
+  gap: 3px 16px;
+
+  /* Márgenes */
+  margin-bottom: 14px;
+
+  /* Tipografía */
+  text-align: left;
+
+  /* Otras propiedades */
+  list-style: none;}
+
 li {
-    font-size: 13px;
-    color: #555;
-    margin: 3px 0;
-}
+/* Márgenes */
+  margin: 2px 0;
 
-/* boton */
-button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    border-radius: 20px;
-    border: none;
-    background: linear-gradient(135deg, #a5b4fc, #fbcfe8);
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
+  /* Tipografía */
+  font-size: 12px;
 
-/* efecto paara cuando se le haga hover al boton */
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+  /* Colores y efectos */
+  color: #666;}
 
-/* mensaje */
+li.valid {
+/* Colores y efectos */
+  color: #2eb82e;}
+
+.opciones-fila {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  /* Márgenes */
+  margin-bottom: 16px;}
+
+.opciones-checks {
+/* Flexbox y Grid */
+  flex: 1;}
+
+.opciones-titulo {
+/* Márgenes */
+  margin-bottom: 6px;
+
+  /* Tipografía */
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  /* Colores y efectos */
+  color: #555;
+
+  /* Otras propiedades */
+  letter-spacing: 0.4px;}
+
+.checks-fila {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  gap: 8px;
+  flex-wrap: wrap;}
+
+.check-item {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  align-items: center;
+  gap: 4px;
+
+  /* Tipografía */
+  font-size: 12px;
+
+  /* Colores y efectos */
+  color: #444;
+
+  /* Interactividad */
+  cursor: pointer;
+  user-select: none;}
+
+.check-item input[type="checkbox"] {
+/* Dimensiones */
+  width: 14px;
+  height: 14px;
+
+  /* Relleno */
+  padding: 0;
+
+  /* Bordes */
+  border-radius: 0;
+  border: none;
+  border-bottom: none;
+
+  /* Fondos */
+  background: transparent;
+
+  /* Interactividad */
+  cursor: pointer;
+
+  /* Otras propiedades */
+  accent-color: #a5b4fc;}
+
+.check-item input[type="checkbox"]:focus {
+/* Bordes */
+  border-bottom: none;
+
+  /* Fondos */
+  background: transparent;}
+
+.contador-grupo {
+/* Dimensiones */
+  min-width: 80px;
+
+  /* Tipografía */
+  text-align: center;}
+
+.contador-fila {
+/* Modelo de caja */
+  display: flex;
+  overflow: hidden;
+
+  /* Flexbox y Grid */
+  align-items: center;
+
+  /* Bordes */
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.5);}
+
+.contador-fila span {
+/* Dimensiones */
+  min-width: 30px;
+
+  /* Relleno */
+  padding: 5px 10px;
+
+  /* Tipografía */
+  font-size: 13px;
+  text-align: center;
+
+  /* Colores y efectos */
+  color: #333;}
+
+.cnt-btn {
+/* Relleno */
+  padding: 5px 9px;
+
+  /* Bordes */
+  border: none;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.4);
+
+  /* Tipografía */
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Colores y efectos */
+  color: #555;
+
+  /* Transiciones y animaciones */
+  transition: background 0.2s;
+
+  /* Interactividad */
+  cursor: pointer;}
+
+.cnt-btn:hover {
+/* Fondos */
+  background: rgba(165,180,252,0.3);}
+
+.acciones-fila {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  gap: 8px;
+
+  /* Márgenes */
+  margin-bottom: 14px;}
+
+#loginBtn {
+/* Flexbox y Grid */
+  flex: 2;
+
+  /* Relleno */
+  padding: 12px;
+
+  /* Bordes */
+  border-radius: 20px;
+  border: none;
+
+  /* Fondos */
+  background: linear-gradient(135deg, #a5b4fc, #fbcfe8);
+
+  /* Tipografía */
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Colores y efectos */
+  color: #333;
+
+  /* Transiciones y animaciones */
+  transition: 0.3s;
+
+  /* Interactividad */
+  cursor: pointer;}
+
+#loginBtn:hover {
+/* Colores y efectos */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+  /* Otras propiedades */
+  transform: translateY(-2px);}
+
+.btn-secundario {
+/* Flexbox y Grid */
+  flex: 1;
+
+  /* Relleno */
+  padding: 12px;
+
+  /* Bordes */
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.12);
+
+  /* Fondos */
+  background: rgba(255,255,255,0.5);
+
+  /* Tipografía */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+
+  /* Colores y efectos */
+  color: #444;
+
+  /* Transiciones y animaciones */
+  transition: 0.3s;
+
+  /* Interactividad */
+  cursor: pointer;}
+
+.btn-secundario:hover {
+/* Fondos */
+  background: rgba(255,255,255,0.75);
+
+  /* Colores y efectos */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+  /* Otras propiedades */
+  transform: translateY(-2px);}
+
+.salida-fila {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  align-items: center;
+  gap: 8px;
+
+  /* Márgenes */
+  margin-bottom: 8px;
+
+  /* Relleno */
+  padding: 9px 14px;
+
+  /* Bordes */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 20px;
+
+  /* Fondos */
+  background: rgba(255,255,255,0.5);}
+
+.salida-fila span#salidaPass {
+/* Modelo de caja */
+  overflow: hidden;
+
+  /* Flexbox y Grid */
+  flex: 1;
+
+  /* Tipografía */
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+
+  /* Colores y efectos */
+  color: #555;
+
+  /* Otras propiedades */
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-overflow: ellipsis;}
+
+.icono-btn {
+/* Dimensiones */
+  width: auto;
+
+  /* Relleno */
+  padding: 2px 4px;
+
+  /* Bordes */
+  border: none;
+  border-radius: 4px;
+  border-bottom: none;
+
+  /* Fondos */
+  background: none;
+
+  /* Tipografía */
+  font-size: 15px;
+
+  /* Colores y efectos */
+  color: #666;
+
+  /* Transiciones y animaciones */
+  transition: color 0.2s;
+
+  /* Interactividad */
+  cursor: pointer;}
+
+.icono-btn:hover {
+/* Colores y efectos */
+  color: #333;}
+
+.toast {
+/* Tipografía */
+  font-size: 11px;
+
+  /* Colores y efectos */
+  color: #2eb82e;
+  opacity: 0;
+
+  /* Transiciones y animaciones */
+  transition: opacity 0.3s;
+
+  /* Otras propiedades */
+  white-space: nowrap;}
+
 #message {
-    margin-top: 10px;
-    font-size: 13px;
-}
+/* Márgenes */
+  margin-top: 10px;
 
-/* estados */
+  /* Tipografía */
+  font-size: 13px;
+  text-align: center;}
+
 .success {
-    color: #86efac;
-}
+/* Colores y efectos */
+  color: #86efac;}
 
 .error {
-    color: #fca5a5;
-}
+/* Colores y efectos */
+  color: #fca5a5;}
+
+.estado-vacio {
+/* Relleno */
+  padding: 2rem 0;
+
+  /* Tipografía */
+  font-size: 13px;
+  text-align: center;
+
+  /* Colores y efectos */
+  color: #666;}
+
+.lista-item {
+/* Modelo de caja */
+  display: flex;
+
+  /* Flexbox y Grid */
+  align-items: center;
+  gap: 10px;
+
+  /* Márgenes */
+  margin-bottom: 8px;
+
+  /* Relleno */
+  padding: 10px 14px;
+
+  /* Bordes */
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.1);
+
+  /* Fondos */
+  background: rgba(255,255,255,0.5);}
+
+.lista-sitio {
+/* Tipografía */
+  font-size: 13px;
+  font-weight: 600;
+
+  /* Colores y efectos */
+  color: #333;}
+
+.lista-usuario {
+/* Tipografía */
+  font-size: 12px;
+
+  /* Colores y efectos */
+  color: #666;}

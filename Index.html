@@ -2,32 +2,113 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login Seguro</title>
+    <title>Generador y gestor de Contraseñas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Login</h1>
 
-    <input type="text" id="user" placeholder="User">
-    <input type="password" id="passwordInput" placeholder="Password">
-
-    <div class="progress-container">
-        <div id="progressBar"></div>
+    <!-- Pestañas superiores -->
+    <div class="tabs">
+        <button class="tab-btn active" id="tab-generador" onclick="cambiarPestana('generador')">
+            Gestionar contraseñas
+        </button>
+        <button class="tab-btn" id="tab-lista" onclick="cambiarPestana('lista')">
+            Lista de contraseñas
+        </button>
     </div>
 
-    <ul>
-        <li id="length">Minimo 8 caracteres</li>
-        <li id="uppercase">Una mayuscula</li>
-        <li id="lowercase">Una minuscula</li>
-        <li id="number">Un numero</li>
-        <li id="special">Un caracter especial</li>
-    </ul>
+    <!-- Panel Generador -->
+    <div class="panel active" id="panel-generador">
 
-    <button id="loginBtn">Ingresar</button>
+        <div class="campo-grupo">
+            <label for="sitio">Sitio</label>
+            <input type="text" id="sitio" class="campo-input" placeholder="ejemplo.com">
+        </div>
 
-    <p id="message"></p>
+        <div class="campo-grupo">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" class="campo-input" placeholder="usuario@ejemplo.com">
+        </div>
+
+        <div class="campo-grupo">
+    <label for="passwordInput">Contraseña </label>
+    <div style="display:flex; align-items:center; gap:6px;">
+        <input type="password" id="passwordInput" class="campo-input" placeholder="••••••••••••••••••••" style="margin:0;">
+        <button class="icono-btn" onclick="alternarVistaMaestra()" title="Mostrar/ocultar">👁</button>
+    </div>
+</div>
+        <!-- Barra de fortaleza (del compañero, sin cambios) -->
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <!-- Lista de requisitos (del compañero, sin cambios) -->
+        <ul>
+            <li id="length">Mínimo 8 caracteres</li>
+            <li id="uppercase">Una mayúscula</li>
+            <li id="lowercase">Una minúscula</li>
+            <li id="number">Un número</li>
+            <li id="special">Un carácter especial</li>
+        </ul>
+
+        <!-- Opciones de contraseña + Longitud + Contador -->
+        <div class="opciones-fila">
+            <div class="opciones-checks">
+                <p class="opciones-titulo">Opciones de contraseña</p>
+                <div class="checks-fila">
+                    <label class="check-item"><input type="checkbox" id="opt-lower" checked> a-z</label>
+                    <label class="check-item"><input type="checkbox" id="opt-upper" checked> A-Z</label>
+                    <label class="check-item"><input type="checkbox" id="opt-num" checked> 0-9</label>
+                    <label class="check-item"><input type="checkbox" id="opt-spec" checked> %!@</label>
+                </div>
+            </div>
+
+            <div class="contador-grupo">
+                <p class="opciones-titulo">Longitud</p>
+                <div class="contador-fila">
+                    <button class="cnt-btn" onclick="ajustarLongitud(-1)">−</button>
+                    <span id="longitud-val">16</span>
+                    <button class="cnt-btn" onclick="ajustarLongitud(1)">+</button>
+                </div>
+            </div>
+
+            <div class="contador-grupo">
+                <p class="opciones-titulo">Contador</p>
+                <div class="contador-fila">
+                    <button class="cnt-btn" onclick="ajustarContador(-1)">−</button>
+                    <span id="contador-val">1</span>
+                    <button class="cnt-btn" onclick="ajustarContador(1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="acciones-fila">
+            <button id="loginBtn" onclick="generarYCopiar()">Generar y copiar</button>
+            <button class="btn-secundario" onclick="guardarEntrada()">Guardar</button>
+            <button class="btn-secundario" onclick="limpiarTodo()">Limpiar</button>
+        </div>
+
+        <!-- Salida de contraseña generada -->
+        <div class="salida-fila">
+            <button class="icono-btn" title="Copiar" onclick="copiarSalida()">⧉</button>
+            <span id="salidaPass">••••••••••••••••</span>
+            <span class="toast" id="toast">¡Copiado!</span>
+            <button class="icono-btn" title="Mostrar/ocultar" onclick="alternarVista()">👁</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <!-- Panel Lista -->
+    <div class="panel" id="panel-lista">
+        <div id="lista-container">
+            <p class="estado-vacio">Aún no hay contraseñas guardadas. Genera y guarda una primero.</p>
+        </div>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
