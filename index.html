@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Generador y gestor de Contraseñas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
 
@@ -36,7 +37,7 @@
     <label for="passwordInput">Contraseña </label>
     <div style="display:flex; align-items:center; gap:6px;">
         <input type="password" id="passwordInput" class="campo-input" placeholder="••••••••••••••••••••" style="margin:0;">
-        <button class="icono-btn" onclick="alternarVistaMaestra()" title="Mostrar/ocultar">👁</button>
+        <button class="icono-btn" onclick="alternarVistaMaestra()" title="Mostrar/ocultar"><i class="bi bi-eye"></i></button>
     </div>
 </div>
         <!-- Barra de fortaleza (del compañero, sin cambios) -->
@@ -93,10 +94,10 @@
 
         <!-- Salida de contraseña generada -->
         <div class="salida-fila">
-            <button class="icono-btn" title="Copiar" onclick="copiarSalida()">⧉</button>
+            <button class="icono-btn" title="Copiar" onclick="copiarSalida()"><i class="bi bi-clipboard"></i></button>
             <span id="salidaPass">••••••••••••••••</span>
             <span class="toast" id="toast">¡Copiado!</span>
-            <button class="icono-btn" title="Mostrar/ocultar" onclick="alternarVista()">👁</button>
+            <button class="icono-btn" title="Mostrar/ocultar" onclick="alternarVista()"><i class="bi bi-eye"></i></button>
         </div>
 
         <p id="message"></p>

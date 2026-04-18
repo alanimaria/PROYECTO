@@ -216,10 +216,10 @@ function renderizarLista() {
                 <input class="campo-input" id="edit-usuario-${i}" value="${entrada.usuario}" placeholder="Usuario">
                 <input class="campo-input" id="edit-pass-${i}" value="${entrada.pass}" placeholder="Contraseña">
             </div>
-            <button class="icono-btn" title="Mostrar contraseña" onclick="alternarVistaLista(${i})">👁</button>
-            <button class="icono-btn" title="Copiar" onclick="copiarEntrada(${i})">⧉</button>
-            <button class="icono-btn" title="Editar" id="btn-editar-${i}" onclick="alternarEdicion(${i})">✏️</button>
-            <button class="icono-btn" title="Eliminar" onclick="eliminarEntrada(${i})">🗑️</button>
+            <button class="icono-btn" title="Mostrar contraseña" onclick="alternarVistaLista(${i})"><i class="bi bi-eye"></i></button>
+            <button class="icono-btn" title="Copiar" onclick="copiarEntrada(${i})"><i class="bi bi-clipboard"></i></button>
+            <button class="icono-btn" title="Editar" id="btn-editar-${i}" onclick="alternarEdicion(${i})"><i class="bi bi-pencil"></i></button>
+            <button class="icono-btn" title="Eliminar" onclick="eliminarEntrada(${i})"><i class="bi bi-trash3"></i></button>
         </div>
     `).join('');
 }
