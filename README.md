@@ -5,6 +5,9 @@ Una aplicación web que permite generar contraseñas seguras, validar su fortale
 ##  Ver proyecto en vivo
 
 👉 [Abrir web](https://alanimaria.github.io/PROYECTO/)
+Documentación
+
+👉 [Ver documentación completa](https://canva.link/bne9ws4dh5iscct)
 
 ---
 
